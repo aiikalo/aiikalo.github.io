@@ -4,30 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mein Lernprojekt</title>
-    <link rel="stylesheet" href="stlye.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Mein Lernprojekt</h1>
+<header>
+    <h1>Mein Lernprojekt</h1>
+    <p class="intro">Hier lernen Sie, wie Sie ihr Handy nutzen könnt!</p>
+</header>
 
-        <div class="textbereich">
-            <p>
-                Willkommen zu meinem Lernprojekt! Hier kannst du Inhalte entdecken und interaktiv lernen.
-            </p>
+<main>
+
+    <!-- Kacheln / Navigation -->
+    <section aria-labelledby="navigation">
+        <h2 id="navigation">Lernbereiche</h2>
+
+        <div class="grid">
+            <!-- 10 Kacheln -->
+            <a href="seite1.html" class="tile">Thema 1</a>
+            <a href="seite2.html" class="tile">Thema 2</a>
+            <a href="seite3.html" class="tile">Thema 3</a>
+            <a href="seite4.html" class="tile">Thema 4</a>
+            <a href="seite5.html" class="tile">Thema 5</a>
+            <a href="seite6.html" class="tile">Thema 6</a>
+            <a href="seite7.html" class="tile">Thema 7</a>
+            <a href="seite8.html" class="tile">Thema 8</a>
+            <a href="seite9.html" class="tile">Thema 9</a>
+            <a href="seite10.html" class="tile">Thema 10</a>
+        </div>
+    </section>
+
+    <!-- Übungen -->
+    <section aria-labelledby="uebungen">
+        <h2 id="uebungen">Hier geht es zu den Übungen</h2>
+
+        <div class="h5p-container">
+            <iframe src="https://apps.zum.de/h5p/47014/embed" title="Übung 1"></iframe>
         </div>
 
         <div class="h5p-container">
-            <iframe src="https://app.lumi.education/api/v1/run/043sRT/embed" 
-                    width="1088" 
-                    height="720" 
-                    frameborder="0" 
-                    allowfullscreen="allowfullscreen" 
-                    allow="geolocation *; microphone *; camera *; midi *; encrypted-media *">
-            </iframe>
-            <script src="https://app.Lumi.education/api/v1/h5p/core/js/h5p-resizer.js" charset="UTF-8"></script>
+            <iframe src="https://apps.zum.de/h5p/47014/embed" title="Übung 2"></iframe>
         </div>
-    </div>
+    </section>
+
+    <!-- Podcast -->
+    <section aria-labelledby="podcast">
+        <h2 id="podcast">Podcast</h2>
+
+        <div class="audio-player">
+            <button id="playBtn" aria-label="Podcast abspielen">▶️</button>
+            <audio id="audio" src="podcast.mp3"></audio>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    const btn = document.getElementById("playBtn");
+    const audio = document.getElementById("audio");
+
+    btn.addEventListener("click", () => {
+        if (audio.paused) {
+            audio.play();
+            btn.textContent = "⏸️";
+        } else {
+            audio.pause();
+            btn.textContent = "▶️";
+        }
+    });
+</script>
 
 </body>
 </html>
