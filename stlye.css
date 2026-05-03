@@ -33,18 +33,42 @@ section {
 
 /* Kacheln */
 .tile {
-    display: block;
+    display: flex;
+    flex-direction: column; /* Text untereinander */
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
     padding: 20px;
-    background: #4CAF50;
-    color: white;
+    background: #ffffff; /* Weißer Hintergrund für Kontrast */
+    color: #1a73e8; /* Modernes Blau */
     text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
+    border: 2px solid #1a73e8;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-.tile:hover,
-.tile:focus {
-    background: #45a049;
+/* Hover- & Fokus-Effekt für Barrierefreiheit */
+.tile:hover, .tile:focus {
+    background: #1a73e8;
+    color: white;
+    transform: translateY(-5px); /* Kleiner Sprung nach oben */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    outline: 3px solid #ffcc00; /* Deutlicher Fokus-Rahmen */
+}
+
+/* Text innerhalb der Kacheln */
+.tile-desc {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin-top: 8px;
+    color: #555;
+}
+
+.tile:hover .tile-desc, .tile:focus .tile-desc {
+    color: #eeeeee;
 }
 
 /* H5P */
