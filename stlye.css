@@ -8,12 +8,23 @@ body {
 /* Header */
 header {
     text-align: center;
-    padding: 20px;
-    background: #ffffff;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%); /* Dezenter, heller Verlauf */
+    border-bottom: 4px solid #1a73e8; /* Visueller Akzent */
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #102a43; /* Sehr dunkles Blau für hervorragende Lesbarkeit */
+    font-size: 2.2rem;
+    margin-bottom: 8px;
 }
 
 .intro {
-    font-size: 18px;
+    font-size: 1.1rem;
+    color: #334e68;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Sections */
@@ -112,6 +123,7 @@ button {
     }
 }
 
+/* Impressum */
 footer {
     text-align: center;
     padding: 40px 20px;
@@ -120,21 +132,31 @@ footer {
     margin-top: 50px;
 }
 
+/* Zurück-Button */
 .btn-back {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px 24px;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #1a73e8; 
+    color: #ffffff !important;
     text-decoration: none;
-    border-radius: 50px; /* Rundes Design */
+    border-radius: 50px; 
     font-weight: bold;
-    border: 2px solid #ccc;
-    margin-bottom: 20px;
-    transition: background 0.3s;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.btn-back:hover, .btn-back:focus {
-    background-color: #333;
-    color: white;
-    outline: 3px solid #ffcc00;
+.btn-back:hover {
+    background-color: #1558b0; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-back:focus {
+    outline: 3px solid #ffcc00; 
+    outline-offset: 2px;
 }
