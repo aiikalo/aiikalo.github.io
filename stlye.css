@@ -1,95 +1,107 @@
+/* ==========================================================================
+   1. Allgemeine Basis-Einstellungen
+   ========================================================================== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f5f5f5;
-    line-height: 1.5;
+    line-height: 1.6; 
+    color: #222222;
 }
 
-/* Header */
+/* ==========================================================================
+   2. Header & Einleitung
+   ========================================================================== */
 header {
     text-align: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%); /* Dezenter, heller Verlauf */
-    border-bottom: 4px solid #1a73e8; /* Visueller Akzent */
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    border-bottom: 4px solid #1a73e8;
     margin-bottom: 20px;
 }
 
 header h1 {
-    color: #102a43; /* Sehr dunkles Blau für hervorragende Lesbarkeit */
-    font-size: 2.2rem;
+    color: #102a43;
+    font-size: 2.5rem;
     margin-bottom: 8px;
 }
 
 .intro {
-    font-size: 1.1rem;
-    color: #334e68;
+    font-size: 1.2rem;
+    color: #102a43;
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* Sections */
 section {
     padding: 30px 20px;
     text-align: center;
 }
 
-/* Grid für Kacheln */
+/* ==========================================================================
+   3. Hauptseite: Grid & Kacheln
+   ========================================================================== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    max-width: 900px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
     margin: auto;
 }
 
-/* Kacheln */
 .tile {
     display: flex;
-    flex-direction: column; /* Text untereinander */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 120px;
-    padding: 20px;
-    background: #ffffff; /* Weißer Hintergrund für Kontrast */
-    color: #1a73e8; /* Modernes Blau */
+    min-height: 140px;
+    padding: 25px;
+    background: #ffffff;
+    color: #1a73e8;
     text-decoration: none;
-    border: 2px solid #1a73e8;
+    border: 3px solid #1a73e8;
     border-radius: 12px;
     font-weight: bold;
+    font-size: 1.3rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease-in-out;
 }
-
 
 .tile:hover, .tile:focus {
     background: #1a73e8;
-    color: white;
-    transform: translateY(-5px); /* Kleiner Sprung nach oben */
+    color: #ffffff !important;
+    transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-    outline: 3px solid #ffcc00; /* Deutlicher Fokus-Rahmen */
+    outline: 4px solid #ffcc00;
+    outline-offset: 2px;
 }
 
+.tile-title {
+    display: block;
+    margin-bottom: 5px;
+}
 
 .tile-desc {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: normal;
     margin-top: 8px;
-    color: #555;
+    color: #334e68;
 }
 
 .tile:hover .tile-desc, .tile:focus .tile-desc {
-    color: #eeeeee;
+    color: #ffffff;
 }
 
-/* H5P */
+/* ==========================================================================
+   4. Interaktive Elemente (H5P, Iframes, Audio)
+   ========================================================================== */
 .h5p-container {
     max-width: 1000px;
     margin: 30px auto;
     position: relative;
     width: 100%;
-
-    padding-top: 56.25%; /* 9 / 16 * 100 = 56.25% */
+    padding-top: 56.25%;
 }
 
 iframe {
@@ -102,15 +114,6 @@ iframe {
     overflow: hidden;
 }
 
-/* Navigation */
-.back {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #333;
-}
-
-/* Podcast */
 .audio-player {
     display: flex;
     justify-content: center;
@@ -118,29 +121,35 @@ iframe {
     gap: 10px;
 }
 
-button {
-    font-size: 24px;
-    padding: 10px;
+button#playBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #1a73e8; 
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
     cursor: pointer;
 }
 
-
-@media (max-width: 600px) {
-    iframe {
-        height: 250px;
-    }
+button#playBtn:hover {
+    background-color: #1558b0; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Impressum */
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    background: #333;
-    color: white;
-    margin-top: 50px;
+button#playBtn:focus {
+    outline: 4px solid #ffcc00; 
+    outline-offset: 2px;
 }
 
-/* Zurück-Button */
+/* ==========================================================================
+   5. Buttons & Navigation
+   ========================================================================== */
 .btn-back {
     display: inline-flex;
     align-items: center;
@@ -151,24 +160,26 @@ footer {
     text-decoration: none;
     border-radius: 50px; 
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     cursor: pointer;
 }
 
 .btn-back:hover {
     background-color: #1558b0; 
-    transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-back:focus {
-    outline: 3px solid #ffcc00; 
+    outline: 4px solid #ffcc00; 
     outline-offset: 2px;
 }
 
+/* ==========================================================================
+   6. Unterseite: Einstellungs-Schritte (Flexbox Layout)
+   ========================================================================== */
 ol.step-list {
     list-style: none;
     padding: 0;
@@ -176,45 +187,40 @@ ol.step-list {
     max-width: 1000px;
 }
 
-/* Anpassungen für Einstellungswebsite */
 .step-item {
     display: flex;
-    flex-direction: row; 
-    gap: 30px;           
+    flex-direction: row;
+    gap: 30px;
     background: #ffffff;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2e8f0;
-    text-align: left;   
-    align-items: stretch; 
+    text-align: left;
+    align-items: stretch;
 }
-
 
 .step-image-container {
-    flex: 0 0 33.333%;  
+    flex: 0 0 33.333%;
     display: flex;
 }
-
 
 .step-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;  
+    object-fit: cover;
     border-radius: 8px;
     border: 2px solid #d9e2ec;
 }
 
-
 .step-text {
-    flex: 1;            
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Zentriert den Text vertikal zum Bild */
+    justify-content: center;
 }
 
-/* Überschriften innerhalb der Schritte */
 .step-text h2 {
     color: #102a43;
     font-size: 1.6rem;
@@ -224,7 +230,6 @@ ol.step-list {
     padding-bottom: 5px;
 }
 
-
 .step-text strong {
     display: block;
     color: #1a73e8;
@@ -233,12 +238,10 @@ ol.step-list {
     margin-bottom: 5px;
 }
 
-
 .step-text p {
     margin: 0 0 10px 0;
     color: #334e68;
 }
-
 
 .section-divider {
     border: 0;
@@ -254,6 +257,27 @@ ol.step-list {
     margin-bottom: 20px;
 }
 
+/* ==========================================================================
+   7. Footer & Responsive Anpassungen
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #102a43;
+    color: white;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+footer a:focus {
+    outline: 3px solid #ffcc00;
+    outline-offset: 4px;
+}
 
 @media (max-width: 768px) {
     .step-item {
@@ -265,5 +289,9 @@ ol.step-list {
     .step-image-container {
         width: 100%;
         height: 200px;
+    }
+    
+    iframe {
+        height: 250px;
     }
 }
