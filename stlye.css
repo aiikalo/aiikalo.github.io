@@ -177,7 +177,7 @@ button#playBtn:focus {
 ol.step-list {
    list-style: none;
    padding: 0;
-   margin: 40px auto 0 auto;
+   margin: 40px auto 0 auto; 
    max-width: 1000px;
 }
 
@@ -192,25 +192,24 @@ ol.step-list {
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
    border: 1px solid #e2e8f0;
    text-align: left;
-   align-items: stretch;
+   align-items: center;
 }
 
 .step-image-container {
    flex: 0 0 33.333%;
+   max-width: 33.333%;
    display: flex;
    justify-content: center;
    align-items: center;
-   background: #ffffff;
 }
 
 .step-image {
    width: 100%;
-   height: auto;
-   max-height: 100%;
-   object-fit: contain;
+   height: auto;       
+   display: block;    
+   object-fit: contain; 
    border-radius: 8px;
    border: 2px solid #d9e2ec;
-}
 
 .step-text {
    flex: 1;
