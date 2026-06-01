@@ -309,6 +309,7 @@ footer a:focus {
 
 .step-text ul, .step-text li {
    color: #334e68;
+}
    
 .app-store-image {
    display: block;
@@ -318,7 +319,4 @@ footer a:focus {
    margin: 20px auto;
    border-radius: 8px;
    border: 2px solid #d9e2ec;
-}
-   font-size: 1rem;
-   line-height: 1.6;
 }
