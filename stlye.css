@@ -209,18 +209,16 @@ ol.step-list {
    max-width: 1000px;
 }
 
-.step-item {
-   display: flex;
-   flex-direction: row;
-   gap: 30px;
-   background: #ffffff;
-   margin-bottom: 40px;
-   padding: 30px;
-   border-radius: 16px;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-   border: 1px solid #e2e8f0;
-   text-align: left;
-   align-items: flex-start; 
+.step-text .app-store-image {
+   display: block;
+   max-width: 220px; 
+   width: 100%;
+   height: auto;
+   /* KORREKTUR: Gleichmäßigerer Abstand nach oben und unten, "auto" schiebt sie mittig in den Block */
+   margin: 30px auto 30px auto; 
+   border-radius: 12px;
+   border: 1px solid #d9e2ec;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* Der linke Container (wichtig für die Einstellungs-Seite) */
