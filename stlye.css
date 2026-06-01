@@ -209,16 +209,19 @@ ol.step-list {
    max-width: 1000px;
 }
 
-.step-text .app-store-image {
-   display: block;
-   max-width: 220px; 
-   width: 100%;
-   height: auto;
-   /* KORREKTUR: Gleichmäßigerer Abstand nach oben und unten, "auto" schiebt sie mittig in den Block */
-   margin: 30px auto 30px auto; 
-   border-radius: 12px;
-   border: 1px solid #d9e2ec;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+/* WICHTIG: Richtet das Bild links und den Text rechts perfekt zueinander aus */
+.step-item {
+   display: flex;
+   flex-direction: row;
+   gap: 30px;
+   background: #ffffff;
+   margin-bottom: 40px;
+   padding: 30px;
+   border-radius: 16px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+   border: 1px solid #e2e8f0;
+   text-align: left;
+   align-items: center; /* KORREKTUR für Settings: Zentriert das Bild vertikal zur Gesamtlänge des Textes */
 }
 
 /* Der linke Container (wichtig für die Einstellungs-Seite) */
@@ -290,10 +293,10 @@ ol.step-list {
    Zentriert die Store-Bilder im Textblock und sorgt für deutlich mehr Abstand zueinander */
 .step-text .app-store-image {
    display: block;
-   max-width: 240px; 
+   max-width: 230px; 
    width: 100%;
    height: auto;
-   margin: 35px auto 55px auto; /* 35px Abstand nach oben, 55px Abstand nach unten zum nächsten Text */
+   margin: 30px auto 35px auto; /* Schafft gleichmäßigen Abstand nach oben und unten und schiebt das Bild in die Mitte */
    border-radius: 12px;
    border: 1px solid #d9e2ec;
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Etwas weicher Schatten für edlere Optik */
