@@ -1,4 +1,6 @@
-/* 1. Allgemeine Basis-Einstellungen */
+/* ==========================================================================
+   1. Allgemeine Basis-Einstellungen & Barrierefreiheit
+   ========================================================================== */
 
 body {
    font-family: Arial, sans-serif;
@@ -8,7 +10,15 @@ body {
    color: #222222;
 }
 
-/* 2. Header & Einleitungen */
+/* Visueller Fokus-Indikator für Tastaturnavigation (Barrierefreiheit) */
+a:focus, button:focus {
+   outline: 4px solid #ffcc00 !important;
+   outline-offset: 2px;
+}
+
+/* ==========================================================================
+   2. Header & Einleitungen
+   ========================================================================== */
 
 header {
    text-align: center;
@@ -36,7 +46,9 @@ section {
    text-align: center;
 }
 
-/* 3. Hauptseite: Grid & Kachel */
+/* ==========================================================================
+   3. Hauptseite: Grid & Kachel
+   ========================================================================== */
 
 .grid {
    display: grid;
@@ -90,14 +102,16 @@ section {
    color: #ffffff;
 }
 
-/* 4. Interaktive Elemente (H5P, Iframes, Audio*/
+/* ==========================================================================
+   4. Interaktive Elemente (H5P, Iframes, Medien)
+   ========================================================================== */
 
 .h5p-container {
    max-width: 1000px;
    margin: 30px auto;
    position: relative;
    width: 100%;
-   padding-top: 56.25%;
+   padding-top: 56.25%; /* 16:9 Format */
 }
 
 iframe {
@@ -108,6 +122,16 @@ iframe {
    height: 100%;
    border: none;
    overflow: hidden;
+}
+
+video {
+   display: block;
+   max-width: 800px;
+   width: 100%;
+   height: auto;
+   margin: 20px auto;
+   border-radius: 8px;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .audio-player {
@@ -143,7 +167,9 @@ button#playBtn:focus {
    outline-offset: 2px;
 }
 
-/* 5. Buttons & Navigation */
+/* ==========================================================================
+   5. Buttons & Navigation
+   ========================================================================== */
 
 .btn-back {
    display: inline-flex;
@@ -160,6 +186,7 @@ button#playBtn:focus {
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
    transition: all 0.2s ease;
    cursor: pointer;
+   margin-bottom: 25px;
 }
 
 .btn-back:hover {
@@ -172,7 +199,9 @@ button#playBtn:focus {
    outline-offset: 2px;
 }
 
-/* 6. Unterseite: Einstellungs-Schritte (Flexbox Layout) */
+/* ==========================================================================
+   6. Unterseiten: Listen & Lern-Schritte (Flexbox Layout)
+   ========================================================================== */
 
 ol.step-list {
    list-style: none;
@@ -192,25 +221,32 @@ ol.step-list {
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
    border: 1px solid #e2e8f0;
    text-align: left;
-   align-items: center;
+   align-items: flex-start; /* Oben ausrichten bei viel Text */
 }
 
+/* Der linke Bild-Container */
 .step-image-container {
-   flex: 0 0 33.333%;
-   max-width: 33.333%;
+   flex: 0 0 35%; /* Leicht erhöht für besseren Platz */
+   max-width: 35%;
    display: flex;
-   justify-content: center;
+   flex-direction: column; /* KORREKTUR: Bilder untereinander zwingen! */
+   gap: 20px; /* Schön gleichmäßiger Abstand zwischen Bild 1 und Bild 2 */
+   justify-content: flex-start;
    align-items: center;
 }
 
+/* Die normalen Inhalts-Bilder */
 .step-image {
    width: 100%;
+   max-width: 280px; /* Verhindert Riesen-Skalierung im Flex-Verbund */
    height: auto;       
    display: block;    
    object-fit: contain; 
    border-radius: 8px;
    border: 2px solid #d9e2ec;
 }
+
+/* Der rechte Text-Container */
 .step-text {
    flex: 1;
    display: flex;
@@ -232,12 +268,39 @@ ol.step-list {
    color: #1a73e8;
    font-size: 1.2rem;
    margin-top: 15px;
-   margin-bottom: 5px;
+   margin-bottom: 8px;
 }
 
 .step-text p {
-   margin: 0 0 10px 0;
+   font-family: Arial, sans-serif;
+   font-size: 1.1rem;
+   margin: 0 0 15px 0;
    color: #334e68;
+}
+
+/* Listen-Formatierung in den Infoboxen */
+.step-text ul {
+   margin: 10px 0 20px 0;
+   padding-left: 25px;
+}
+
+.step-text li {
+   font-family: Arial, sans-serif;
+   font-size: 1.1rem;
+   color: #334e68;
+   margin-bottom: 10px;
+   line-height: 1.6;
+}
+
+/* Korrektur für die alleinstehenden Store-Logos */
+.app-store-image {
+   display: block;
+   max-width: 250px; 
+   width: 100%;
+   height: auto;
+   margin: 15px 0 25px 0;
+   border-radius: 8px;
+   border: 1px solid #d9e2ec;
 }
 
 .section-divider {
@@ -254,7 +317,9 @@ ol.step-list {
    margin-bottom: 20px;
 }
 
-/* 7. Footer & Responsive Anpassungen */
+/* ==========================================================================
+   7. Footer & Responsive Anpassungen
+   ========================================================================== */
 
 footer {
    text-align: center;
@@ -270,11 +335,7 @@ footer a {
    text-decoration: underline;
 }
 
-footer a:focus {
-   outline: 3px solid #ffcc00;
-   outline-offset: 4px;
-}
-
+/* Responsive Anpassung für Smartphones und kleine Tablets */
 @media (max-width: 768px) {
    .step-item {
       flex-direction: column;
@@ -284,39 +345,20 @@ footer a:focus {
 
    .step-image-container {
       width: 100%;
-      height: 200px;
+      max-width: 100%;
+      height: auto;
+      flex: none;
+   }
+   
+   .step-image {
+      max-width: 100%;
    }
     
    iframe {
       height: 250px;
    }
-
-/* wegen der Intro Seite */
    
-.app-gallery-layout .step-image-container {
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
-.app-gallery-layout .step-text {
-    flex: 0 0 50%;
-}
-
-.app-gallery-layout .step-image {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.step-text ul, .step-text li {
-   color: #334e68;
-}
-   
-.app-store-image {
-   display: block;
-   max-width: 300px;
-   width: 100%;
-   height: auto;
-   margin: 20px auto;
-   border-radius: 8px;
-   border: 2px solid #d9e2ec;
+   .app-store-image {
+      margin: 15px auto 25px auto;
+   }
 }
