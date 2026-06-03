@@ -356,4 +356,11 @@ footer a {
    .app-store-image {
       margin: 15px auto 25px auto;
    }
+   .h5p-container {
+      padding-top: 110%;
+   }
+
+   .h5p-container iframe {
+      height: 100% !important; 
+   }
 }
