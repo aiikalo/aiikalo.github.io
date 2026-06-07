@@ -223,7 +223,7 @@ ol.step-list {
    align-items: center; 
 }
 
-/* Der linke Container (Wichtig für die Kachel-Bilder z.B. bei Einstellungen) */
+/* Der linke Container (Standardmäßig für die großen Kachel-Bilder z.B. bei Einstellungen) */
 .step-image-container {
    flex: 0 0 35%; 
    max-width: 35%;
@@ -232,7 +232,7 @@ ol.step-list {
    align-items: center;       
 }
 
-/* Die normalen, großen Inhalts-Bilder auf der Einstellungs-Seite */
+/* Die normalen, großen Inhalts-Bilder (z.B. Zahnrad auf der Einstellungs-Seite) */
 .step-image {
    width: 100%;
    max-width: 280px; 
@@ -243,16 +243,25 @@ ol.step-list {
    border: 2px solid #d9e2ec;
 }
 
-/* ==========================================================================
-   NEU / KORREKTUR: Speziell für kleine Bilder (Wetter, Kalender) im Textblock.
-   Verhindert, dass Symbole im Textblock riesig aufgebläht werden.
-   ========================================================================== */
-.step-text .step-image {
-   max-width: 75px;           /* Angenehme, kleine Symbolgröße */
-   margin: 15px 0;            /* Abstand nach oben und unten zum Text */
-   border: 1px solid #cbd5e1;  /* Etwas feinerer Rahmen für kleine Symbole */
-   border-radius: 8px;
+/* --------------------------------------------------------------------------
+   KORREKTUR: Wenn der .step-image-container INNERHALB des Textblocks liegt 
+   (wie bei deinen Wetter- und Kalender-Symbolen auf der Intro-Seite)
+   -------------------------------------------------------------------------- */
+.step-text .step-image-container {
+   display: block;            /* Hebt das Flexbox-Verhalten der großen Kachel auf */
+   max-width: 100%;           /* Darf die volle Textbreite nutzen */
+   width: auto;
+   flex: none;
+   margin: 15px 0;            /* Angenehmer Abstand zum Text */
+}
+
+/* Macht die Icons im Textblock knackig klein */
+.step-text .step-image-container .step-image {
+   max-width: 70px;           /* KORREKTUR: Perfekte Symbol-Größe für die App-Icons */
+   border: 1px solid #cbd5e1;  /* Etwas feinerer Rahmen */
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+   margin: 0;                 /* Verhindert doppelte Abstände */
+   border-radius: 8px;
 }
 
 /* Der rechte Text-Container */
@@ -276,7 +285,7 @@ ol.step-list {
    display: block;
    color: #1a73e8;
    font-size: 1.2rem;
-   margin-top: 20px;          /* Schafft Platz vor Zwischenüberschriften */
+   margin-top: 25px;          /* Schafft etwas Platz vor Zwischenüberschriften */
    margin-bottom: 8px;
 }
 
@@ -326,7 +335,6 @@ ol.step-list {
    font-size: 1.2rem;
    margin-bottom: 20px;
 }
-
 /* ==========================================================================
    7. Footer & Responsive Anpassungen
    ========================================================================== */
