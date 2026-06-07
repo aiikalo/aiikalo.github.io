@@ -244,19 +244,19 @@ ol.step-list {
 }
 
 /* ==========================================================================
-   BOMBENSICHERER FIX: Speziell für die Icons aus dem "intro/" Ordner 
-   (Wetter, Kalender etc.), damit sie knackig klein neben dem Text stehen!
+   KORREKTUR: Jetzt DOPPELT SO GROẞ (120px) für die Icons aus dem "intro/" Ordner
+   (Wetter, Kalender etc.), damit sie perfekt lesbar sind!
    ========================================================================== */
 img[src*="intro/"] {
-   width: 60px !important;       /* Perfekte, kleine Icon-Größe */
-   max-width: 60px !important;
-   height: 60px !important;      /* Macht das Icon quadratisch */
+   width: 120px !important;       /* KORREKTUR: Doppelt so groß für perfekte Lesbarkeit */
+   max-width: 120px !important;
+   height: 120px !important;      /* Bleibt ein sauberes, quadratisches App-Icon */
    object-fit: contain !important;
    display: block !important;
-   margin: 15px 0 !important;    /* Schöner Abstand zum Text */
+   margin: 20px 0 !important;     /* Minimal mehr Abstand, weil das Icon größer ist */
    border: 1px solid #cbd5e1 !important;
-   border-radius: 12px !important; /* Edler, abgerundeter App-Look */
-   box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
+   border-radius: 18px !important; /* Etwas weichere Ecken, passend zur neuen Größe */
+   box-shadow: 0 4px 8px rgba(0,0,0,0.08) !important;
 }
 
 /* Der rechte Text-Container */
