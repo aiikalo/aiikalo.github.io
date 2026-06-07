@@ -255,9 +255,11 @@ ol.step-list {
    margin: 15px 0;            /* Angenehmer Abstand zum Text */
 }
 
-/* Macht die Icons im Textblock knackig klein */
+/* Macht die Icons im Textblock knackig klein und bricht die 100%-Breite auf */
 .step-text .step-image-container .step-image {
-   max-width: 70px;           /* KORREKTUR: Perfekte Symbol-Größe für die App-Icons */
+   width: auto !important;    /* WICHTIG: Überschreibt die 100% Breite von oben! */
+   max-width: 70px !important;/* KORREKTUR: Zwingt das Bild auf die kleine Icon-Größe */
+   display: inline-block;     /* Lässt das Bild sich wie ein Icon verhalten */
    border: 1px solid #cbd5e1;  /* Etwas feinerer Rahmen */
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
    margin: 0;                 /* Verhindert doppelte Abstände */
@@ -335,6 +337,7 @@ ol.step-list {
    font-size: 1.2rem;
    margin-bottom: 20px;
 }
+
 /* ==========================================================================
    7. Footer & Responsive Anpassungen
    ========================================================================== */
