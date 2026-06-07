@@ -209,7 +209,6 @@ ol.step-list {
    max-width: 1000px;
 }
 
-/* WICHTIG: Richtet das Bild links und den Text rechts perfekt zueinander aus */
 .step-item {
    display: flex;
    flex-direction: row;
@@ -221,19 +220,19 @@ ol.step-list {
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
    border: 1px solid #e2e8f0;
    text-align: left;
-   align-items: center; /* KORREKTUR für Settings: Zentriert das Bild vertikal zur Gesamtlänge des Textes */
+   align-items: center; 
 }
 
-/* Der linke Container (wichtig für die Einstellungs-Seite) */
+/* Der linke Container (Wichtig für die Kachel-Bilder z.B. bei Einstellungen) */
 .step-image-container {
    flex: 0 0 35%; 
    max-width: 35%;
    display: flex;
-   justify-content: center;   /* Zentriert das Kachel-Bild horizontal */
-   align-items: center;       /* Zentriert das Kachel-Bild vertikal */
+   justify-content: center;   
+   align-items: center;       
 }
 
-/* Die normalen Inhalts-Bilder auf der Einstellungs-Seite */
+/* Die normalen, großen Inhalts-Bilder auf der Einstellungs-Seite */
 .step-image {
    width: 100%;
    max-width: 280px; 
@@ -242,6 +241,18 @@ ol.step-list {
    object-fit: contain; 
    border-radius: 8px;
    border: 2px solid #d9e2ec;
+}
+
+/* ==========================================================================
+   NEU / KORREKTUR: Speziell für kleine Bilder (Wetter, Kalender) im Textblock.
+   Verhindert, dass Symbole im Textblock riesig aufgebläht werden.
+   ========================================================================== */
+.step-text .step-image {
+   max-width: 75px;           /* Angenehme, kleine Symbolgröße */
+   margin: 15px 0;            /* Abstand nach oben und unten zum Text */
+   border: 1px solid #cbd5e1;  /* Etwas feinerer Rahmen für kleine Symbole */
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 /* Der rechte Text-Container */
@@ -265,7 +276,7 @@ ol.step-list {
    display: block;
    color: #1a73e8;
    font-size: 1.2rem;
-   margin-top: 15px;
+   margin-top: 20px;          /* Schafft Platz vor Zwischenüberschriften */
    margin-bottom: 8px;
 }
 
@@ -289,17 +300,17 @@ ol.step-list {
    line-height: 1.6;
 }
 
-/* FIX FÜR DIE EINFÜHRUNGS-SEITE: 
-   Zentriert die Store-Bilder im Textblock und sorgt für deutlich mehr Abstand zueinander */
+/* FIX FÜR DIE STORE-LOGOS: Zwingt sie untereinander und zentriert sie */
 .step-text .app-store-image {
-   display: block;
-   max-width: 230px; 
+   display: block;          
+   clear: both;             
+   max-width: 210px;        
    width: 100%;
    height: auto;
-   margin: 30px auto 35px auto; /* Schafft gleichmäßigen Abstand nach oben und unten und schiebt das Bild in die Mitte */
+   margin: 30px auto 35px auto; 
    border-radius: 12px;
    border: 1px solid #d9e2ec;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Etwas weicher Schatten für edlere Optik */
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .section-divider {
