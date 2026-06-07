@@ -244,18 +244,18 @@ ol.step-list {
 }
 
 /* ==========================================================================
-   BOMBENSICHERER FIX: Jetzt korrigiert auf echte 120px Breite und 120px Höhe!
+   BOMBENSICHERER FIX: Jetzt auf das 1,5-Fache vergrößert (180px mal 180px)
    ========================================================================== */
 img[src*="intro/"] {
-   width: 120px !important;       /* Breite verdoppelt */
-   max-width: 120px !important;
-   height: 120px !important;      /* KORREKTUR: Höhe jetzt AUCH auf 120px gesetzt! */
+   width: 180px !important;       /* Breite auf das 1,5-Fache erhöht */
+   max-width: 180px !important;
+   height: 180px !important;      /* Höhe zieht exakt quadratisch mit! */
    object-fit: contain !important;
    display: block !important;
-   margin: 20px 0 !important;     /* Schöner Abstand zum Text */
+   margin: 25px 0 !important;     /* Leicht angepasster Abstand für die neue Größe */
    border: 1px solid #cbd5e1 !important;
-   border-radius: 18px !important; /* Abgerundete App-Ecken */
-   box-shadow: 0 4px 8px rgba(0,0,0,0.08) !important;
+   border-radius: 24px !important; /* Etwas rundere App-Ecken, passend zur neuen Größe */
+   box-shadow: 0 6px 12px rgba(0,0,0,0.08) !important;
 }
 
 /* Der rechte Text-Container */
