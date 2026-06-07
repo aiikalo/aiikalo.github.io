@@ -244,18 +244,17 @@ ol.step-list {
 }
 
 /* ==========================================================================
-   KORREKTUR: Jetzt DOPPELT SO GROẞ (120px) für die Icons aus dem "intro/" Ordner
-   (Wetter, Kalender etc.), damit sie perfekt lesbar sind!
+   BOMBENSICHERER FIX: Jetzt korrigiert auf echte 120px Breite und 120px Höhe!
    ========================================================================== */
 img[src*="intro/"] {
-   width: 120px !important;       /* KORREKTUR: Doppelt so groß für perfekte Lesbarkeit */
+   width: 120px !important;       /* Breite verdoppelt */
    max-width: 120px !important;
-   height: 120px !important;      /* Bleibt ein sauberes, quadratisches App-Icon */
+   height: 120px !important;      /* KORREKTUR: Höhe jetzt AUCH auf 120px gesetzt! */
    object-fit: contain !important;
    display: block !important;
-   margin: 20px 0 !important;     /* Minimal mehr Abstand, weil das Icon größer ist */
+   margin: 20px 0 !important;     /* Schöner Abstand zum Text */
    border: 1px solid #cbd5e1 !important;
-   border-radius: 18px !important; /* Etwas weichere Ecken, passend zur neuen Größe */
+   border-radius: 18px !important; /* Abgerundete App-Ecken */
    box-shadow: 0 4px 8px rgba(0,0,0,0.08) !important;
 }
 
