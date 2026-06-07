@@ -234,36 +234,41 @@ ol.step-list {
 
 /* Die normalen, großen Inhalts-Bilder (z.B. Zahnrad auf der Einstellungs-Seite) */
 .step-image {
-   width: 100%;
-   max-width: 280px; 
-   height: auto;        
-   display: block;     
+   width: 100% !important;
+   max-width: 280px !important; 
+   height: auto !important;        
+   display: block !important;     
    object-fit: contain; 
    border-radius: 8px;
    border: 2px solid #d9e2ec;
 }
 
 /* --------------------------------------------------------------------------
-   KORREKTUR: Wenn der .step-image-container INNERHALB des Textblocks liegt 
-   (wie bei deinen Wetter- und Kalender-Symbolen auf der Intro-Seite)
+   RADIKALE KORREKTUR: Für die kleinen Symbole (Wetter, Kalender) im Textblock.
+   Wir überschreiben hier JEDE globale Bild-Regel im Browser.
    -------------------------------------------------------------------------- */
-.step-text .step-image-container {
-   display: block;            /* Hebt das Flexbox-Verhalten der großen Kachel auf */
-   max-width: 100%;           /* Darf die volle Textbreite nutzen */
-   width: auto;
-   flex: none;
-   margin: 15px 0;            /* Angenehmer Abstand zum Text */
+
+/* 1. Den Container im Textblock zähmen */
+ol.step-list .step-item .step-text .step-image-container {
+   display: block !important;
+   max-width: 80px !important;   /* Der Kasten um das Icon darf maximal 80px breit sein */
+   width: 80px !important;
+   height: auto !important;
+   flex: none !important;
+   margin: 15px 0 !important;
+   padding: 0 !important;
 }
 
-/* Macht die Icons im Textblock knackig klein und bricht die 100%-Breite auf */
-.step-text .step-image-container .step-image {
-   width: auto !important;    /* WICHTIG: Überschreibt die 100% Breite von oben! */
-   max-width: 70px !important;/* KORREKTUR: Zwingt das Bild auf die kleine Icon-Größe */
-   display: inline-block;     /* Lässt das Bild sich wie ein Icon verhalten */
-   border: 1px solid #cbd5e1;  /* Etwas feinerer Rahmen */
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-   margin: 0;                 /* Verhindert doppelte Abstände */
-   border-radius: 8px;
+/* 2. Das Bild (img) im Kasten radikal runterskalieren */
+ol.step-list .step-item .step-text .step-image-container img.step-image {
+   width: 100% !important;       /* Nutzt 100% der nun winzigen Box (also max. 70px-80px) */
+   max-width: 70px !important;   /* Erzwingt eine knackig kleine Icon-Größe */
+   height: auto !important;
+   display: inline-block !important;
+   border: 1px solid #cbd5e1 !important;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+   margin: 0 !important;
+   border-radius: 8px !important;
 }
 
 /* Der rechte Text-Container */
@@ -287,7 +292,7 @@ ol.step-list {
    display: block;
    color: #1a73e8;
    font-size: 1.2rem;
-   margin-top: 25px;          /* Schafft etwas Platz vor Zwischenüberschriften */
+   margin-top: 25px;          
    margin-bottom: 8px;
 }
 
@@ -313,12 +318,12 @@ ol.step-list {
 
 /* FIX FÜR DIE STORE-LOGOS: Zwingt sie untereinander und zentriert sie */
 .step-text .app-store-image {
-   display: block;          
-   clear: both;             
-   max-width: 210px;        
-   width: 100%;
-   height: auto;
-   margin: 30px auto 35px auto; 
+   display: block !important;          
+   clear: both !important;             
+   max-width: 210px !important;        
+   width: 100% !important;
+   height: auto !important;
+   margin: 30px auto 35px auto !important; 
    border-radius: 12px;
    border: 1px solid #d9e2ec;
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
