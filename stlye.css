@@ -223,7 +223,7 @@ ol.step-list {
    align-items: center; 
 }
 
-/* Der linke Container (Standardmäßig für die großen Kachel-Bilder z.B. bei Einstellungen) */
+/* Der linke Container (Für die großen Kachel-Bilder z.B. bei Einstellungen) */
 .step-image-container {
    flex: 0 0 35%; 
    max-width: 35%;
@@ -234,41 +234,29 @@ ol.step-list {
 
 /* Die normalen, großen Inhalts-Bilder (z.B. Zahnrad auf der Einstellungs-Seite) */
 .step-image {
-   width: 100% !important;
-   max-width: 280px !important; 
-   height: auto !important;        
-   display: block !important;     
+   width: 100%;
+   max-width: 280px; 
+   height: auto;        
+   display: block;     
    object-fit: contain; 
    border-radius: 8px;
    border: 2px solid #d9e2ec;
 }
 
-/* --------------------------------------------------------------------------
-   RADIKALE KORREKTUR: Für die kleinen Symbole (Wetter, Kalender) im Textblock.
-   Wir überschreiben hier JEDE globale Bild-Regel im Browser.
-   -------------------------------------------------------------------------- */
-
-/* 1. Den Container im Textblock zähmen */
-ol.step-list .step-item .step-text .step-image-container {
+/* ==========================================================================
+   BOMBENSICHERER FIX: Speziell für die Icons aus dem "intro/" Ordner 
+   (Wetter, Kalender etc.), damit sie knackig klein neben dem Text stehen!
+   ========================================================================== */
+img[src*="intro/"] {
+   width: 60px !important;       /* Perfekte, kleine Icon-Größe */
+   max-width: 60px !important;
+   height: 60px !important;      /* Macht das Icon quadratisch */
+   object-fit: contain !important;
    display: block !important;
-   max-width: 80px !important;   /* Der Kasten um das Icon darf maximal 80px breit sein */
-   width: 80px !important;
-   height: auto !important;
-   flex: none !important;
-   margin: 15px 0 !important;
-   padding: 0 !important;
-}
-
-/* 2. Das Bild (img) im Kasten radikal runterskalieren */
-ol.step-list .step-item .step-text .step-image-container img.step-image {
-   width: 100% !important;       /* Nutzt 100% der nun winzigen Box (also max. 70px-80px) */
-   max-width: 70px !important;   /* Erzwingt eine knackig kleine Icon-Größe */
-   height: auto !important;
-   display: inline-block !important;
+   margin: 15px 0 !important;    /* Schöner Abstand zum Text */
    border: 1px solid #cbd5e1 !important;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
-   margin: 0 !important;
-   border-radius: 8px !important;
+   border-radius: 12px !important; /* Edler, abgerundeter App-Look */
+   box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
 }
 
 /* Der rechte Text-Container */
@@ -316,7 +304,7 @@ ol.step-list .step-item .step-text .step-image-container img.step-image {
    line-height: 1.6;
 }
 
-/* FIX FÜR DIE STORE-LOGOS: Zwingt sie untereinander und zentriert sie */
+/* FIX FÜR DIE STORE-LOGOS */
 .step-text .app-store-image {
    display: block !important;          
    clear: both !important;             
