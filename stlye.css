@@ -140,32 +140,33 @@ video {
    gap: 10px;
 }
 
+/* KORREKTUR: Wesentlich größerer Podcast-Button für optimale Bedienung */
 button#playBtn {
    display: inline-flex;
    align-items: center;
-   gap: 8px;
-   padding: 12px 24px;
-   background-color: #1a73e8; 
+   gap: 12px;
+   padding: 18px 36px;          /* Viel Klickfläche für ältere Finger */
+   background-color: #1a73e8;   /* Schönes, klares Blau */
    color: #ffffff;
    font-weight: bold;
-   font-size: 1.1rem;
+   font-size: 1.4rem;           /* Schön große, lesbare Schrift */
    border: none;
    border-radius: 50px; 
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
    transition: all 0.2s ease;
    cursor: pointer;
 }
 
 button#playBtn:hover {
    background-color: #1558b0; 
-   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+   transform: scale(1.02);      /* Minimales haptisches Feedback */
 }
 
 button#playBtn:focus {
    outline: 4px solid #ffcc00; 
-   outline-offset: 2px;
+   outline-offset: 4px;
 }
-
 /* ==========================================================================
    5. Buttons & Navigation
    ========================================================================== */
@@ -378,3 +379,10 @@ footer a {
       height: 100% !important; 
    }
 }
+
+button#playBtn {
+      font-size: 1.2rem;
+      padding: 14px 28px;
+      width: 100%;
+      justify-content: center;
+   }
