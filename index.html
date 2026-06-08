@@ -52,6 +52,7 @@
             
         </div>
     </section>
+    
     <section aria-labelledby="podcast">
         <ol class="step-list">
     	    <li class="step-item">
@@ -59,35 +60,41 @@
                     <h2>Podcast</h2>
                 
                     <p>
-                        Hier finden Sie einen Podcast über eine mögliche Gefahr bei der Handynutzung. Keine Angst, Sie erfahren direkt auch praktische Lösungsansätze. Zum Starten des Podcasts drücken Sie auf den Play Button (Blauer Knopf in der Mitte des Textes).
+                        Hier finden Sie einen Podcast über eine mögliche Gefahr bei der Handynutzung. Keine Angst, Sie erfahren direkt auch praktische Lösungsansätze. Zum Starten des Podcasts drücken Sie auf den großen blauen Play-Button.
                     </p>
                 
-                    <div class="audio-player">
-                        <button id="playBtn" aria-label="Podcast abspielen">▶️</button>
+                    <!-- Großer, barrierefreier Podcast-Player-Bereich -->
+                    <div class="audio-player" style="margin: 25px 0;">
+                        <button id="playBtn" aria-label="Podcast abspielen">
+                            <span id="btnIcon">▶</span> Podcast abspielen
+                        </button>
                         <audio id="audio" src="Podcast2.mp3"></audio>
                     </div>
-                    <p>
+                    
+                    <p style="font-size: 0.95rem; color: #555;">
                        Der Podcastinhalt wurde in Anlehnung an Koza, E., Öztürk, A. und Willer, M. (2024). "Social Engineering und Human Hacking: Strategien zur Prävention und Abwehr von Manipluationstechniken in der IT." herausgearbeitet.
                     </p>
                 </div> 
             </li>
 	    </ol>
-        
     </section>
 
 </main>
 
 <script>
     const btn = document.getElementById("playBtn");
+    const btnIcon = document.getElementById("btnIcon");
     const audio = document.getElementById("audio");
 
     btn.addEventListener("click", () => {
         if (audio.paused) {
             audio.play();
-            btn.textContent = "⏸️";
+            btnIcon.textContent = "⏸";
+            btn.innerHTML = '<span id="btnIcon">⏸</span> Podcast pausieren';
         } else {
             audio.pause();
-            btn.textContent = "▶️";
+            btnIcon.textContent = "▶";
+            btn.innerHTML = '<span id="btnIcon">▶</span> Podcast abspielen';
         }
     });
 </script>
